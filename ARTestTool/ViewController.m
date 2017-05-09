@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "AppDelegate.h"
 #import "ARScanViewController.h"
+#import "CUSFlashLabel.h"
 
 @interface ViewController ()<UINavigationControllerDelegate,UIImagePickerControllerDelegate,UIAlertViewDelegate>
 {
@@ -16,7 +17,14 @@
     AppDelegate * appDelegate;
     UIAlertController *tipAlert;
 }
+@property (weak, nonatomic) IBOutlet UIButton *takePhotoBtn;
+@property (weak, nonatomic) IBOutlet UIButton *selPhtotoBtn;
+@property (weak, nonatomic) IBOutlet UIButton *saveImgBtn;
 @property (weak, nonatomic) IBOutlet UIImageView *selImg;
+@property (weak, nonatomic) IBOutlet UIButton *ARTestBtn;
+@property (weak, nonatomic) IBOutlet UILabel *showNameLB;
+@property (weak, nonatomic) IBOutlet CUSFlashLabel *showTipLb;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *imgHeight;
 @end
 
 @implementation ViewController
@@ -24,7 +32,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     appDelegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
-    // Do any additional setup after loading the view, typically from a nib.
+    _ARTestBtn.backgroundColor = [UIColor orangeColor];
+    _ARTestBtn.clipsToBounds = YES;
+    _ARTestBtn.layer.cornerRadius = 8;
+
+    _showTipLb.text = @"【 请先拍照或选择拍照之后进行AR测试 】";
+    _saveImgBtn.hidden = YES;
+    [_showTipLb startAnimating];
+    [_showTipLb setSpotlightColor:[UIColor yellowColor]];
+
 }
 
 - (IBAction)takeCamera:(id)sender {
@@ -81,9 +97,10 @@
         ;
         [picker dismissViewControllerAnimated:YES completion:nil];
 
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"新建文件夹" message:@"" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"用英文字母给文件命名" message:@"" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
         [alert setAlertViewStyle:UIAlertViewStylePlainTextInput];
         UITextField *txtName = [alert textFieldAtIndex:0];
+        txtName.keyboardType = UIKeyboardTypeASCIICapable;
         txtName.placeholder = @"请输入名称";
         [alert show];
     }
@@ -98,10 +115,18 @@
             NSString *txtstr =  [txt.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
             if(txtstr && txtstr.length>0){
                 appDelegate.imgName = txtstr;
+                _showNameLB.text = txtstr;
+                _showNameLB.textColor = [UIColor whiteColor];
+                _showTipLb.hidden = YES;
+                _saveImgBtn.hidden = NO;
             }
             
         }
         
+    }
+    else{
+        _showNameLB.text = @"必须给图片命名,请重新选择图片";
+        _showNameLB.textColor = [UIColor redColor];
     }
 }
 - (IBAction)ARScanAction:(id)sender {

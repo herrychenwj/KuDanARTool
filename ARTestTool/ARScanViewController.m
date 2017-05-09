@@ -15,6 +15,7 @@
 @interface ARScanViewController ()<AVAudioPlayerDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *showLabel;
+@property (weak, nonatomic) IBOutlet UIButton *backBtn;
 
 @end
 
@@ -40,11 +41,12 @@
     //设置代理
     avAudioPlayer.delegate = self;
     
-    
-    NSString *normalstring = [[NSBundle mainBundle] pathForResource:@"scan_voice" ofType:@"mp3"];
-    //把音频文件转换成url格式
-    avAudioPlayer2 = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:normalstring] error:nil];
-    avAudioPlayer.delegate = self;
+    _backBtn.clipsToBounds = YES;
+    _backBtn.layer.cornerRadius = 8;
+//    NSString *normalstring = [[NSBundle mainBundle] pathForResource:@"scan_voice" ofType:@"mp3"];
+//    //把音频文件转换成url格式
+//    avAudioPlayer2 = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:normalstring] error:nil];
+//    avAudioPlayer.delegate = self;
 
     
 }
@@ -89,8 +91,8 @@
     [startTrackimg addTrackingEventTarget:self action:@selector(textTracking:) forEvent:ARImageTrackableEventDetected];
     [startTrackimg addTrackingEventTarget:self action:@selector(textLost:) forEvent:ARImageTrackableEventLost];
     
-    [self startAnimal];
-    [avAudioPlayer2 play];
+//    [self startAnimal];
+//    [avAudioPlayer2 play];
     
 }
 
@@ -128,7 +130,7 @@
         self.showLabel.hidden = NO;
         showAnimal = NO;
         //
-        [avAudioPlayer2 stop];
+//        [avAudioPlayer2 stop];
         [avAudioPlayer play];
     });
     
@@ -149,7 +151,7 @@
         self.showLabel.text = @"";
         self.showLabel.hidden = YES;
         showAnimal = YES;
-        [self startAnimal];
+//        [self startAnimal];
     });
 }
 - (void)didReceiveMemoryWarning {

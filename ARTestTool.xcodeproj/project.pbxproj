@@ -20,6 +20,9 @@
 		36C9A2831EBB0C770025AA89 /* btn_click.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 36C9A2821EBB0C770025AA89 /* btn_click.mp3 */; };
 		36C9A2851EBB13E90025AA89 /* scan_voice.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 36C9A2841EBB13E90025AA89 /* scan_voice.mp3 */; };
 		36C9A2881EBB29F90025AA89 /* RadarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C9A2871EBB29F90025AA89 /* RadarView.m */; };
+		36C9A28A1EC05EFC0025AA89 /* default_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 36C9A2891EC05EFC0025AA89 /* default_bg.png */; };
+		36C9A2981EC06FCF0025AA89 /* start_appbg.png in Resources */ = {isa = PBXBuildFile; fileRef = 36C9A2971EC06FCF0025AA89 /* start_appbg.png */; };
+		36C9A29C1EC160E50025AA89 /* CUSFlashLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C9A29B1EC160E50025AA89 /* CUSFlashLabel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +45,10 @@
 		36C9A2841EBB13E90025AA89 /* scan_voice.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = scan_voice.mp3; sourceTree = "<group>"; };
 		36C9A2861EBB29F90025AA89 /* RadarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadarView.h; sourceTree = "<group>"; };
 		36C9A2871EBB29F90025AA89 /* RadarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadarView.m; sourceTree = "<group>"; };
+		36C9A2891EC05EFC0025AA89 /* default_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = default_bg.png; sourceTree = "<group>"; };
+		36C9A2971EC06FCF0025AA89 /* start_appbg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = start_appbg.png; sourceTree = "<group>"; };
+		36C9A29A1EC160E50025AA89 /* CUSFlashLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CUSFlashLabel.h; sourceTree = "<group>"; };
+		36C9A29B1EC160E50025AA89 /* CUSFlashLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CUSFlashLabel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +84,7 @@
 		36C9A25A1EBAC60E0025AA89 /* ARTestTool */ = {
 			isa = PBXGroup;
 			children = (
+				36C9A2991EC160E50025AA89 /* CUSMaskView */,
 				36C9A2861EBB29F90025AA89 /* RadarView.h */,
 				36C9A2871EBB29F90025AA89 /* RadarView.m */,
 				36C9A25E1EBAC60E0025AA89 /* AppDelegate.h */,
@@ -98,6 +106,8 @@
 		36C9A25B1EBAC60E0025AA89 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				36C9A2971EC06FCF0025AA89 /* start_appbg.png */,
+				36C9A2891EC05EFC0025AA89 /* default_bg.png */,
 				36C9A2841EBB13E90025AA89 /* scan_voice.mp3 */,
 				36C9A2821EBB0C770025AA89 /* btn_click.mp3 */,
 				36C9A2721EBAC65D0025AA89 /* KudanAR.framework */,
@@ -112,6 +122,15 @@
 				36C9A2751EBAC66D0025AA89 /* libc++.tbd */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		36C9A2991EC160E50025AA89 /* CUSMaskView */ = {
+			isa = PBXGroup;
+			children = (
+				36C9A29A1EC160E50025AA89 /* CUSFlashLabel.h */,
+				36C9A29B1EC160E50025AA89 /* CUSFlashLabel.m */,
+			);
+			path = CUSMaskView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -174,7 +193,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				36C9A2851EBB13E90025AA89 /* scan_voice.mp3 in Resources */,
+				36C9A2981EC06FCF0025AA89 /* start_appbg.png in Resources */,
 				36C9A27E1EBAD87D0025AA89 /* ARScanViewController.xib in Resources */,
+				36C9A28A1EC05EFC0025AA89 /* default_bg.png in Resources */,
 				36C9A2831EBB0C770025AA89 /* btn_click.mp3 in Resources */,
 				36C9A26B1EBAC60E0025AA89 /* LaunchScreen.storyboard in Resources */,
 				36C9A2681EBAC60E0025AA89 /* Assets.xcassets in Resources */,
@@ -194,6 +215,7 @@
 				36C9A2631EBAC60E0025AA89 /* ViewController.m in Sources */,
 				36C9A2601EBAC60E0025AA89 /* AppDelegate.m in Sources */,
 				36C9A25D1EBAC60E0025AA89 /* main.m in Sources */,
+				36C9A29C1EC160E50025AA89 /* CUSFlashLabel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,6 +337,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = launchimg;
 				DEVELOPMENT_TEAM = 929RU7A9V2;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -325,6 +348,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.morview.mesumeguidekudan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -332,6 +356,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = launchimg;
 				DEVELOPMENT_TEAM = 929RU7A9V2;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -342,6 +367,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.morview.mesumeguidekudan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

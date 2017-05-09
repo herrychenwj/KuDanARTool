@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ARScanViewController">
             <connections>
+                <outlet property="backBtn" destination="vln-Qb-QRQ" id="OdQ-wh-hKZ"/>
                 <outlet property="showLabel" destination="Cw2-Qo-QTX" id="460-6c-snQ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -20,23 +21,39 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vln-Qb-QRQ">
-                    <rect key="frame" x="23" y="20" width="68" height="44"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="返回"/>
-                    <connections>
-                        <action selector="backAction:" destination="-1" eventType="touchUpInside" id="iZx-tm-03p"/>
-                    </connections>
-                </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="此处显示扫描图片的名称" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cw2-Qo-QTX">
-                    <rect key="frame" x="53" y="60" width="247" height="36"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cw2-Qo-QTX">
+                    <rect key="frame" x="50" y="50" width="275" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="XeP-CJ-KkH"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vln-Qb-QRQ">
+                    <rect key="frame" x="87.5" y="593" width="200" height="44"/>
+                    <color key="backgroundColor" red="1" green="0.58697651750000002" blue="0.035141917109999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="200" id="rbD-rP-BAL"/>
+                        <constraint firstAttribute="height" constant="44" id="yGh-wG-EWs"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                    <state key="normal" title="返 回">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="backAction:" destination="-1" eventType="touchUpInside" id="iZx-tm-03p"/>
+                    </connections>
+                </button>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="vln-Qb-QRQ" secondAttribute="bottom" constant="30" id="4DY-Zl-giF"/>
+                <constraint firstItem="vln-Qb-QRQ" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="9PC-Bc-a3V"/>
+                <constraint firstItem="Cw2-Qo-QTX" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="50" id="ARF-u9-FGW"/>
+                <constraint firstAttribute="trailing" secondItem="Cw2-Qo-QTX" secondAttribute="trailing" constant="50" id="K3a-Xi-GZf"/>
+                <constraint firstItem="Cw2-Qo-QTX" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="50" id="v5a-8z-9t5"/>
+            </constraints>
             <point key="canvasLocation" x="34.5" y="54.5"/>
         </view>
     </objects>
